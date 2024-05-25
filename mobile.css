@@ -1,0 +1,93 @@
+/* CSS for mobile devices */
+@media only screen and (max-width: 767px) {
+    /* Your CSS styles for mobile devices go here */
+    body {
+        font-size: 16px; /* Example style for body font size on mobile */
+    }
+    /* Additional styles for specific elements */
+  nav{
+    padding: 5px;
+  }
+  .search-bar{
+   display: none;
+  }
+  #user{
+    display: none;
+  }
+  #mobsearch{
+    display: block;
+  }
+  #mob-back,#mob-input,#mob-cut{
+    display: none;
+  }
+
+  .first{
+    display: flex;
+  }
+
+  .third{
+    width: 40%;
+  }
+
+  .full{
+    width: 100%;
+  }
+
+
+  .main{
+    overflow-y: scroll;
+  }
+  
+.mob-searchbar{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+
+  #mob-input{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 1rem;
+  }
+ 
+  .expandedSidebar{
+    background-color: var(--primary-color);
+    min-width: 70%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+  }
+
+  .add-note input{
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .note-menu{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .note-menu-items{
+    width: 100%;
+  }
+  
+  #close, #pin-close{
+    align-self: flex-end;
+  }
+   
+}
+
+.note-item{
+  margin: 15px 15px 15px 0;
+
+}

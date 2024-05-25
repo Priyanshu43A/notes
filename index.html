@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="viewport" content="width=device-width">
+  <title>Google keep</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+  />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <div id="first" class="first">
+      <i id="menu" class="fa-solid fa-bars"></i>
+      <div class="logo">
+        <img src="logo.png" alt="keep">
+        <h1>keep</h1>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input autocomplete="off" id="search" type="text" placeholder="Search">
+      <i style="display: none;" id="cut" class="fa-solid fa-xmark"></i>
+    </div>
+
+    <div id="third" class="third">
+      <div class="mob-searchbar">
+        <i id="mob-back" class="fa-solid fa-arrow-left"></i>
+        <input placeholder="Search..." id="mob-input" type="text">
+        <i id="mobsearch" class="fa-solid fa-magnifying-glass"></i>
+        <i id="mob-cut" class="fa-solid fa-xmark"></i>
+
+      </div>
+      <div id="view">
+        <i onclick="grid()" class="fa-solid fa-border-all"></i>
+
+      </div>
+
+      <i id="settings" class="fa-solid fa-gear"></i>
+      <div class="setting-container hide">
+        <button>Profile</button>
+        <button id="mode">Enable dark mode</button>
+        <button>Lock notes</button>
+        <button>About</button>
+      </div>
+      <div id="user" class="user">
+        <img style="width: 100%; height: 100%;" src="user.png" alt="user">
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <div class="main">
+    <div class="sidebar">
+      <div class="sidebar-item active">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3 class="itenName">Notes</h3>
+      </div>
+      <div class="sidebar-item">
+        <i class="fa-solid fa-bell"></i>
+        <h3 class="itenName">Reminders</h3>
+      </div>
+      <div class="sidebar-item">
+        <i class="fa-solid fa-pen"></i>
+        <h3 class="itenName">Edit labels</h3>
+      </div>
+      <div class="sidebar-item">
+        <i class="fa-solid fa-tag"></i>
+        <h3 class="itenName">Label 1</h3>
+      </div>
+      <div class="sidebar-item">
+        <i class="fa-solid fa-box-archive"></i>
+        <h3 class="itenName">Archieve</h3>
+      </div>
+      <div class="sidebar-item">
+        <i class="fa-solid fa-trash-can"></i>
+        <h3 class="itenName">Bin</h3>
+      </div>
+
+      <div class="align-bottom">
+        <div class="sidebar-item">
+          <i class="fa-solid fa-ghost"></i>
+          <h3 class="itenName">Hire me </h3>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notes-container">
+
+      <div class="add-note">
+
+        <div class="add-note-small">
+          <input id="add-input" placeholder="Take a note..." type="text">
+          <i onclick="showAlert()" class="fa-regular fa-square-check"></i>
+          <i onclick="showAlert()" class="fa-solid fa-paintbrush"></i>
+          <i onclick="showAlert()" class="fa-regular fa-image"></i>
+        </div>
+
+        <div class="add-note-big">
+          <input id="newNoteTitle" placeholder="Title" type="text">
+          <div>
+            <textarea placeholder="Take a note..." autofocus id="textInput" rows="1"></textarea>
+
+          </div>
+          <div class="note-menu">
+            <div id="menuBtns" class="note-menu-items">
+
+              <i class="fa-solid fa-bell"></i>
+              <i class="fa-solid fa-palette"></i>
+              <i class="fa-regular fa-image"></i>
+              <i class="fa-solid fa-box-archive"></i>
+              <i onclick="fontstyle()" id="text-style" class="fa-solid fa-font"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+            <div id="close">
+              <p>
+                <button type="submit" id="closenote">Close</button>
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+
+        
+        <div id="pin-note-big" class="add-note-big">
+          <input id="newPinNoteTitle" placeholder="Title" type="text">
+          <div>
+            <textarea placeholder="Take a note..." autofocus id="pintextInput" rows="1"></textarea>
+
+          </div>
+          <div class="note-menu">
+            <div id="pinmenuBtns" class="note-menu-items">
+
+              <i class="fa-solid fa-bell"></i>
+              <i class="fa-solid fa-palette"></i>
+              <i class="fa-regular fa-image"></i>
+              <i class="fa-solid fa-box-archive"></i>
+              <i onclick="pinfontstyle()" id="pin-text-style" class="fa-solid fa-font"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+            <div id="pin-close">
+              <p>
+                <button type="submit" id="closepinnote">Close</button>
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+      <div class="empty">
+        <i class="fa-solid fa-lightbulb"></i>
+        <p>Your notes will appear here....</p>
+      </div>
+
+      <div style="margin-top: 5vh;" class="pinned-notes-cont">
+          <div>PINNED</div> 
+        <div class="pinned-notes">
+          
+          
+          </div>
+
+        
+       </div>
+       
+
+      <div class="note">
+            
+      </div>
+    </div>   
+  </div>
+
+   <div class="alert-box">
+     <div class="alert">
+       <p>This feature is currently unavailable!</p>
+       <button id="cancel">Cancel</button>
+     </div>
+   </div>
+  
+  <script src="https://kit.fontawesome.com/15526767ae.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="main.js"></script>
+
+
+</body>
+
+</html>
